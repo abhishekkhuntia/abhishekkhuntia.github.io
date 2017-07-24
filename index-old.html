@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Abhishek Khuntia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Abhishek Khuntia, from India, designer, developer, Search Engine Optimization, Database Management" />
+    <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+        <script src="http://scrollmagic.io/js/lib/greensock/TweenMax.min.js"></script>
+        <script src="http://scrollmagic.io/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+    <style type="text/css">
+    * {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    }
+	#pinContainer {
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		-webkit-perspective: 1000;
+		        perspective: 1000;
+	}
+	#slideContainer {
+		width: 400%; /* to contain 4 panels, each with 100% of window width */
+		height: 100%;
+        background-image: url("./img/back_full1.png");
+        background-size: 95% auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #484848;
+       
+	}
+	.panel {
+        background-image: url('./img/square.png');
+		height: 100%;
+		width: 25%; /* relative to parent -> 25% of 400% = 100% of window width */
+		float: left;
+        
+	}
+        body{margin:0px;width:100vw;height: 100vh;overflow-x: hidden;font: 300 16px/1.167 'BauhausHarishwk-Medium','Segoe UI Light','Segoe UI',Helvetica,Garuda,Arial,sans-serif;}
+        .blue{background-color: #0099e5;}
+        .turqoise{background-color:#ff4c4c;}
+        .green{background-color: #34bf49;}
+        .bordeaux{background-color: #f90;}
+        .purple{background-color: #614385;}        
+        #enterDiv,#footer
+        {height: 100%;width: 100%;}#footer{background-color: #f90;}#enterDiv{overflow: hidden;}
+        .divRight,.cntDiv,.cntDiv:before{width:50vw;height: auto;background: #eee; margin: auto;position: absolute;top:0;bottom: 0;left:0; position: absolute;float: left;}
+        .divRight{float: right;background-color: #FFDE00;right: 0px;left: auto;z-index: 3;width: 49vw;}
+        .cntDiv:before{content: "";position: absolute;top:0px;background-image: url('./img/square.png');z-index: 2;background-color: transparent;}
+        
+        #proImg{height:auto;width:50vw;position: absolute;bottom: 0px;left: 0px;max-width: 500px;z-index: 1;}
+        .cntDiv h1{color: #484848;padding: 5px;}#attrUl li{list-style: none;text-align: right;padding:0px;margin-bottom: -10px;font-size: 18px;}
+        #slidermainh4,#sliderspanh4,.hash{font-size:16px;line-height: 40px;}.hash{}
+        .slidespan{display:none;}#slul1{display: block;}#slidermainh4{background:#fff;}
+       #sliderspanh4{width: 40vw;height:20vh;            
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    padding: 3px;}
+        #sendDiv input,.checkotpdiv input{
+            padding: 10px 10px;
+            background: transparent;
+            border:2px solid #fff;
+            border-radius: 10px;
+            width:50%;vertical-align: middle;color: #fff;font-size:25px;text-align:center;
+            font-family: 'BauhausHarishwk-Medium',arial,sans-serif;
+            background: #fff;
+            transition: 0.3s;
+            color: #484848;
+            clear: both;
+            margin-bottom: 15px;
+        }
+        #sendDiv input:focus{background: #f90;}
+        #sendDiv,.checkotpdiv{padding-top: 15%;}#sendDiv h2,.checkotpdiv h2{color: #fff;}
+        .panel .item{
+                min-height: 500px;
+                max-width: 470px;
+        }
+        .panel .itemLeft{ margin-left: 50%;}
+        .panel .itemRight{ margin-right: 50%;}
+        #sendDiv button,.checkotpdiv button{
+            padding: 10px 10px;
+            width: 200px;
+            border-radius: 10px;
+            background: #fff;
+            color: #66ccff;
+            border: none;transition: 0.3s;
+            margin-top:15px;
+            cursor: pointer;font-family: 'BauhausHarishwk-Medium',arial,sans-serif;
+        }
+        #sendDiv button:hover
+        {
+            background: #f90;
+            color: #484848;
+            box-shadow: 1px 0 5px #484848;
+        }
+        .checkotpdiv{display: none;}
+        .panel .item .headerH1
+        {
+            font-size: 35px;
+            color: #fff;
+        }
+        .panel .item .desc
+        {
+                color: #95a5a6;
+                margin-bottom: 15px;
+                font-size: 14px;
+                font-weight: 400;
+        }
+        .panel .item h3{color:#fff;border: 1px dashed #fff;padding:5px 10px;}
+        .panel ul li{color:#FFDE00;font-size: 20px;list-style:none;border-bottom:1px dashed #fff;padding:5px 10px;border-left:1px dashed #fff;}
+        .panel ul{padding-top:0px;}
+        .panel .item{padding:10px;}
+        #pan3 .item{background: transparent;}
+        @font-face {
+            font-family: 'BauhausHarishwk-Medium';
+            src: url(../fonts/bauhausharishwkmedium.eot);
+            src: url(../fonts/bauhausharishwkmedium.eot?#iefix) format("embedded-opentype"), url(../fonts/bauhausharishwkmedium.woff) format("woff"), url(../fonts/bauhausharishwkmedium.ttf) format("truetype"), url(../fonts/bauhausharishwkmedium.svg#bauhausharishwkmedium) format("svg");
+            font-weight: 400;
+            font-style: normal;
+        }
+        .showUl{padding: 0px;}.showUl li{display: inline-table;}
+        #loader{position:fixed;top:0px;width:100%;height:100%;background-color:rgba(72,72,72,0.9);z-index:10;}
+        #load_cnt{font-size:30px;color:#76b852;font-weight:bold;width:200px;height:200px;margin: auto;position: absolute;top:0;bottom: 0;left:0;right:0;padding: 5px;}
+        .postdiv{display: none;max-height: 500px; overflow-x: hidden;color: #f0f0f0;} .activeDiv{display: block;}
+        
+        #showUlId .activeDivli{background: #FFDE00;color:#484848;}
+        #showUlId li{cursor:pointer;transition: 0.3s;}
+        #showUlId li:hover{background: #f0f0f0;color:#484848;}
+        .proname {
+        color: #f90;
+        border-bottom: 2px solid #f0f0f0;
+        line-height: 50px;
+        }
+        #attrUl{
+    position: absolute;
+    z-index: 5;
+    right: 0px;padding-right:5px;}
+        #attrUl li{display: inline-table;padding: 5px;border:2px dashed #484848;margin-right:10px;}
+        #attrUl li img{vertical-align: middle;}
+        #attrUl a:hover>li{background: #FFDE00}
+    </style>
+    </head>    
+<body>
+<div id="enterDiv">
+    <div class="cntDiv" align="center">
+        <h1 align="right">Abhishek Khuntia</h1>
+         <ul id="attrUl">
+            <a href="mailto:abhishek.khuntia93@gmail.com"><li><img src="./img/ic_email_black_24dp_1x.png"/></li></a>
+            <a href="tel:9700483900"><li><img src="./img/ic_phone_black_24px.svg"/></li></a>
+             <a href="http://www.linkedin.com/in/abhishek-khuntia-abby"><li><img src="./img/linkedin1.png"/></li></a>
+             <a href="https://www.facebook.com/abhishek.khuntia.33"><li><img src="./img/fb2.PNG"/></li></a>
+        </ul>
+        <img id="proImg" src="./img/fbpro.png"/>
+    </div>
+    <div class="divRight">
+        <!--<ul>
+            <li>PROGRAMMING</li>
+            <li>COOKING</li><li>MAGAZINE DESIGNER</li><li>WEB DEVELOPER</li><li>APPLICATION DEVELOPMENT</li><li>SEARCH ENGINE OPTIMIZATION</li><li>PAGE OPTIMIZATION</li>
+        </ul>-->
+        <h4 id="sliderspanh4"><span class="hash slidespan"id="slul1" rel="1"> &nbsp PROGRAMMING</span><span class="hash slidespan" id="slul2" rel="2"> &nbsp COOKING</span><span class="hash slidespan"id="slul3" rel="3">  &nbsp MAGAZINE DESIGNER</span><span class="hash slidespan"id="slul4" rel="4">  &nbsp WEB DESIGNING</span><span class="hash slidespan"id="slul5" rel="5"> &nbsp APPLICATION DEVELOPMENT</span><span class="hash slidespan" id="slul6" rel="6"> &nbsp SEARCH ENGINE OPTIMIZATION</span><span class="hash slidespan" id="slul7" rel="7">&nbsp PAGE OPTIMIZATION</span></h4>
+    </div>
+</div>
+<div id="pinContainer">
+	<div id="slideContainer">
+		<section class="panel" id="">
+            <div class="item itemLeft">
+                <h1 class="headerH1">DESIGN</h1>
+                <h3>Tools</h3>
+                <ul>
+                        <li>Adobe Photoshop CS5 for graphics design</li>
+                        <li>Pencil for wire framing</li>
+                </ul>
+                <h3>Languages</h3>
+                <ul>
+                    <li>HTML 5</li>
+                    <li>CSS 3.0</li>
+                    <li>JQuery UI</li>
+                    <li>SAAS</li>
+                </ul>
+                <p class="desc">
+                    
+                </p>
+            </div>
+            
+		</section>
+		<section class="panel ">
+			<div class="item itemLeft">
+                <h1 class="headerH1">CODE</h1>
+                <h3>Tools</h3>
+                <ul>
+                        <li>Visual Studio 15 Community Edition</li>
+                        <li>Bracket</li>
+                        <li>Windows SQL Server 2008</li>
+                        <li>XAMPP</li>
+                </ul>
+                <h3>Languages</h3>
+                <ul>
+                    <li>C# .NET</li>
+                    <li>Javascript</li>
+                    <li>Angular JS</li>
+                    <li>Node.JS</li>
+                    <li>SQL</li>
+                    <li>PHP</li>
+                </ul>
+                <p class="desc">
+                    
+                </p>
+            </div>
+		</section>
+		<section id="pan3" class="panel">
+			<div class="item itemRight">
+                <h1 class="headerH1">TEST <small>&</small> DEPLOYMENT</h1>
+                
+                <p class="desc">
+                    After Design and Code, its time to test and deploy.
+                    <br/>
+                    In order to test various performance indexes are taken care like <strong>'Critical Rendering Path', 'Page Optimization'</strong>.
+                </p>
+                <h3>Tools</h3>
+                <ul>
+                        <li>Google Chromium</li>
+                        <li>Google PageSpeed Insights</li>
+                        <li>FileZilla</li>
+                        <li>Visual Studio Installer</li>
+                </ul>
+            </div>
+		</section>
+		<section class="panel " id="showCase">
+			<div class="item itemLeft">
+                <nav>
+                    <ul id="showUlId"class="showUl">
+                        <li class="activeDivli"rel="1">iAcademics</li>
+                        <li rel="2">Anweshan v2.0</li>
+                        <li rel="3">iChare</li>
+                        <li rel="4">Shop’n’Pick</li>
+                        <li rel="5">FollowPlus</li>
+                    </ul>
+                </nav>
+                <content>
+                    <div id="mainCntID">
+                        <div class="postdiv activeDiv" id="proj1">
+                        <div class="postcnt" align="left">
+                            <h2 class="proname">iAcademics</h2>
+                            <h4 class="organameh4">Organization/Institute: &nbsp&nbsp<span class="organamespan">Indira Gandhi Institute of Technology</span></h4>
+                            <h4 class="datetimeh4">Project duration:&nbsp&nbsp <span class="datetimespan">September 2014 to May 2015</span></h4>
+                            <p class="abstract">
+                                In this world of smartphones and digitalization, all the activities in our day to day are put online in form of a WebAPP or smartphone app, for handy and easy accessibility. The application, will be serving the teachers, Deans and the students, providing utmost features of time table scheduling, notifications and maintaining the academics records; via their Android smart phones.  Time table scheduling refers to the sorting of the time table based on the user’s credentials; iAcademics will give push-notifications for the users, in case of any updating. It will also provide the real time experience of data analysis and keeping track of all academic records.
+                                In this we will be using Google Cloud for data storage, Google cloud SQL server acting as the backbone server and the Google Messaging service, for notifications and Instant messaging. Eclipse IDE, with Java as the base language for the App Development will be used for development.
+                                This project can further be enhanced to integrate all other modules of academics which includes attendance for both teachers and students; online filing of leave applications for the officials and support all other mobile platforms.
+                                                </p>
+                              <div class="media">
+                                  <iframe width="266" height="150" src="https://www.youtube.com/v/M3CU5VUcS9k" frameborder="0" allowfullscreen></iframe>
+                              </div>
+                        </div>
+                        </div>
+                    
+                      <div class="postdiv" id="proj2">
+                        <div class="postcnt" align="left">
+                            <h2 class="proname">Anweshan v2.0, <small><i>Event management application</i></small></h2>
+                            <h4 class="organameh4">Organization/Institute: &nbsp&nbsp<span class="organamespan">Indira Gandhi Institute of Technology</span></h4>
+                            <h4 class="datetimeh4">Project duration:&nbsp&nbsp <span class="datetimespan"> March 2013 to April 2013</span></h4>
+                            <p class="abstract">
+                                A web based application, designed for institutes and colleges. Consisting a flexible approach, so that it could be implemented to various scenarios. Developed based on PHP as back-end and jQuery+HTML+CSS3 as front end.                </p>
+                              <div class="media">
+                                  <iframe width='266' height='150' src="https://www.youtube.com/v/lEK7hcVBjcI" frameborder='0' allowfullscreen></iframe>
+                              </div>
+                        </div>
+                        </div>
+                        
+                        <div class="postdiv" id="proj5">
+                        <div class="postcnt" align="left">
+                            <h2 class="proname">FollowPlus, <small><i>Queue Management</i></small></h2>
+                            <h4 class="organameh4">Organization/Institute: &nbsp&nbsp<span class="organamespan">Freelancing</span></h4>
+                            <h4 class="datetimeh4">Project duration:&nbsp&nbsp <span class="datetimespan"> May 2016 to Current</span></h4>
+                            <p class="abstract">
+                                A hybrid application, having both desktop and web version for proper case management. The application gets data by email parsing and manual entry. This helps the analyst and the supervisor to keep a keen eye upon the proceedings of a case. It helps to complete the tasks with this the SLA.</p>
+                              <div class="media">
+                                  
+                              </div>
+                        </div>
+                        </div>
+                        
+                        <div class="postdiv" id="proj3">
+                        <div class="postcnt" align="left">
+                            <h2 class="proname">iChare, <small><i>Car Pooling application, RnD project</i></small></h2>
+                            <h4 class="organameh4">Organization/Institute: &nbsp&nbsp<span class="organamespan">Freelancing</span></h4>
+                            <h4 class="datetimeh4">Project duration:&nbsp&nbsp <span class="datetimespan"> May 2016 to Current</span></h4>
+                            <p class="abstract">
+                                A web based car- pooling applications. It was integrated with google maps and HTML5 geolocation feature in order to enhance the feature of carpooling. It was developed with the help of PHP 5.2, jQuery 2.0, HTML5, and CSS3. http://www.ichare.xyz got recognition for it.</p>
+                              <div class="media">
+                                  <iframe width='266' height='150' src="https://www.youtube.com/v/VLgnjEaxhCY" frameborder='0' allowfullscreen></iframe>
+                              </div>
+                        </div>
+                        </div>
+                        
+                        <div class="postdiv" id="proj4">
+                        <div class="postcnt" align="left">
+                            <h2 class="proname">Shop’n’Pick, <small><i>online market place</i></small></h2>
+                            <h4 class="organameh4">Organization/Institute: &nbsp&nbsp<span class="organamespan">Freelancing</span></h4>
+                            <h4 class="datetimeh4">Project duration:&nbsp&nbsp <span class="datetimespan"> June 2015 to August 2015</span></h4>
+                            <p class="abstract">
+                                Designed and developed with a motive of making the local shops online. This application requires your location details, so that you could find a shop which requires minimum calories to be burnt to reach. The shop keepers can manage their inventory as well as employee management details with this.It was developed as a trial version. http://www.snpuser.pe.hu</p>
+                              <div class="media">
+                                  <iframe width="266" height="150" src="https://www.youtube.com/v/uGqhXwuM0Q0" frameborder="0" allowfullscreen></iframe>
+                              </div>
+                        </div>
+                        </div>
+                    </div>
+                </content>
+            </div>
+		</section>
+	</div>
+</div>
+<div id="footer" align="center">
+    <div id="sendDiv">
+    <form class="emailsendform"action="#">
+		<label for="email"><h2>Enter your email for receiving password,<br />Don't worry it won't be stored.</h2></label>
+		<input type="text" name="email" placeholder="Enter your Email ID" /><br/><br/>
+		<button><i class="fa fa-check"></i>  DONE</button>
+    </form>
+    </div>
+    <div class="checkotpdiv">
+					<form class="ckotpform"action="#">
+						<label for="otp"><h2>Check your mail ID for the OTP</h2></label>
+						<input type="text" name="oemail" placeholder="Email ID" />
+						<input type="text" name="otp" placeholder="Enter One time password" />
+						<br /><button id="downBtn"><i class="fa fa-download"></i>  DOWNLOAD</button>
+                        <br/>
+                        <button id="resetBtn">Cancel</button>
+					</form>
+    </div>
+</div>
+<div id="loader" align="center">
+	<p id="load_cnt">Loading...</p>
+</div>
+</body>
+<script>
+	$(function () { // wait for document ready
+		// init
+		var controller = new ScrollMagic.Controller();
+
+		// define movement of panels
+		var wipeAnimation = new TimelineMax()
+			// animate to second panel
+					// move back in 3D space
+			.to("#slideContainer", 1.5,   {x: "-25%"})	// move in to first panel
+			.to("#slideContainer", 0.5, {z: 0})				// move back to origin in 3D space
+            
+			// animate to third panel
+			
+			.to("#slideContainer", 1.5,   {x: "-50%"})
+			.to("#slideContainer", 0.5, {z: 0})
+            //.to("#slideContainer",0.5,{backround-color:brown})
+			// animate to forth panel
+			
+			.to("#slideContainer", 1.5,   {x: "-75%"})
+			.to("#slideContainer", 0.5, {z: 0});
+
+		// create scene to pin and link animation
+		new ScrollMagic.Scene({
+				triggerElement: "#pinContainer",
+				triggerHook: "onLeave",
+				duration: "500%"
+			})
+			.setPin("#pinContainer")
+			.setTween(wipeAnimation)
+			.addTo(controller);
+        
+	});
+    function slidefun()
+			{
+				var max=$(".slidespan").length;
+				var crr=$(".slidespan:visible").attr('rel');
+				if(crr<max)
+					crr++;
+				else
+					crr=1;
+				$(".slidespan").fadeOut(300);
+				
+				setTimeout(function(){$(".slidespan").css({'letter-spacing':'5px'});$("#slul"+crr).toggle(300);$("#slul"+crr).animate({"letter-spacing":"10"},2000);},200);
+				
+				var slmax=$(".sliderupul li").length;
+				var slcrr=$(".sliderupul .activeli").attr('rel');
+				
+				$(".activeli").removeClass("activeli");
+				if(slcrr<slmax)
+					slcrr++;
+				else
+					slcrr=1;
+				$("#slpid"+slcrr+" span").animate({"opacity":"0"},300);
+				$("#slpid"+slcrr+" span").animate({"opacity":"1"},300);
+				$("#slpid"+slcrr).addClass("activeli");
+            }
+    $(document).ready(function()
+    {
+        $("#loader").fadeOut();
+        setInterval(function(){slidefun();},3000);
+        $(".showUl li").click(function()
+        {
+            var rel=$(this).attr('rel');
+            if($(this).is(".activeDivli"))
+            {}
+            else
+            {
+                $(".activeDivli").removeClass("activeDivli");
+                $(this).addClass("activeDivli");
+                $(".postdiv").slideUp();
+                $("#proj"+rel).fadeIn();
+            }
+        });
+        $(".emailsendform").submit(function(e)
+				{
+					e.preventDefault();
+					if($("input[name=email]").val().length>0)
+					{
+					
+						$(".emailsendform button").attr({'disabled':true});
+						$(".emailsendform button").text('Sending...');
+					var formD={'action':'sendotp','mail':$("input[name=email]").val()};
+					$.ajax
+					({
+						type:'POST',
+						url:'http://www.abhishekkhuntia.xyz/sendotp.php',
+						data:formD,
+						encode:true
+					})
+					.done(function(data)
+					{
+						var obj=$.parseJSON(data);
+						if(obj['mail_success'])
+						{$(".sendmaildiv,.checkotpdiv").toggle(300);$("input[name=oemail]").val(formD['mail'])}
+						else
+							alert("Unable to perform action.");
+						
+						
+					}).fail(function()
+					{
+						alert("Unable to connect to the backend");
+						$(".emailsendform button").attr({'disabled':false});
+						$(".emailsendform button").text('Done');
+					});
+					}
+					else
+						alert("Enter email ID");
+				});
+        $("#downBtn").click(function(e)
+				{
+					e.preventDefault();
+					if($("input[name=otp]").val().length>0&&$("input[name=oemail]").val().length>0)
+					{
+					
+						$(".ckotpform button").attr({'disabled':true});
+						$(".ckotpform button").text('Sending...');
+					var formD={'otp':$("input[name=otp]").val(),'oemail':$("input[name=oemail]").val()};
+					$.ajax
+					({
+						type:'POST',
+						url:'http://www.abhishekkhuntia.xyz/ckotp.php',
+						data:formD,
+						encode:true
+					})
+					.done(function(data)
+					{
+						var obj=$.parseJSON(data);
+						if(obj['success'])
+						{
+							window.open(obj['pdflink']);
+						}
+						else
+							alert("Sorry incorrect combination.");
+						
+						$(".ckotpform button").attr({'disabled':false});
+						$(".ckotpform button").text('DOWNLOAD');
+					}).fail(function()
+					{
+						alert("Unable to connect to the backend");
+						$(".ckotpform button").attr({'disabled':false});
+						$(".ckotpform button").text('DOWNLOAD');
+					});
+					}
+					else
+						alert("Enter OTP sent to your mail ID");
+					
+				});
+    });
+</script>
+
+</html>
