@@ -298,6 +298,27 @@ label span{color:#FF0000; background-color:inherit;}
 #topbar .faico a{color:inherit;}
 #topbar .faico a:hover{color:#FFFFFF;}
 
+.loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(72,72,72,0.8);
+    height: 100vh;
+    width: 100%;
+    z-index: 10000000;
+}
+.loader .load_content{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 2em;
+}
 
 /* Main Slider */
 .basicslider .flex-direction-nav a{color:#FFFFFF;}
