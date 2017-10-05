@@ -327,11 +327,12 @@ label span{color:#FF0000; background-color:inherit;}
 .flexslider .slides li .flex-content article{color:inherit; background-color:rgba(8,53,69,0.75); box-shadow:8px 8px 0 rgba(0,0,0,.6);}
 .flexslider .slides li .flex-content article::before{border-color:transparent #ff6d02 transparent transparent;}
 .flexslider .slides li .flex-content article .viewit{background-color:#ff6d02;}
-
+.whiteBg{ background: #F5F5F5;}
 
 /* Content Area */
 .services li article{border-color:transparent;}
-.services li:hover article{border-color:#EFEFEF;}
+.services li:hover article{border-color:#EFEFEF;box-shadow: 0 0 10px #efefef;}
+.services .one_quarter{ background: #fff;}
 
 
 /* Testimonial Carousel */
