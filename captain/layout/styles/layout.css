@@ -16,6 +16,20 @@
 /* Bellow all 
 -----------------------------------------
 */
+.fl_right{float: right !important;}
+.country_list{ padding: 0px;}
+.country_list li{
+    display: inline-block;
+    width: 46%;
+    padding: 10px 10px;
+    background: rgba(255,255,255,0.8);
+    color: black;
+    margin: 10px;
+    font-weight: bold;
+    border-left: 5px solid #f90;}
+.country_list li:nth-child(even){border-color: #66ccff;}
+.locDiv{background-position:center !important; background-size: cover !important;transition:all .3s ease-in-out;}
+.locDiv:hover{}
 .red-arrow{
     width: 0;
     height: 0;
@@ -128,7 +142,7 @@
 /* Full Width Split Box
 --------------------------------------------------------------------------------------------------------------- */
 #split50{display:block; width:100%; background-position:top right; background-repeat:no-repeat; background-size:contain;}
-#split50 .block{display:block; float:left; width:50%; padding:4%;}
+#split50 .block{display:block; float:left; width:50%; padding:4%;background-image: url('../../images/real/cubes.png');}
 
 
 /* Newsletter
@@ -173,7 +187,7 @@
 /* Navigation
 --------------------------------------------------------------------------------------------------------------- */
 nav ul, nav ol{margin:0; padding:0; list-style:none;}
-
+#mainav{ font-weight: bold;}
 #mainav, #breadcrumb, .sidebar nav{line-height:normal;}
 #mainav .drop::after, #mainav li li .drop::after, #breadcrumb li a::after, .sidebar nav a::after{position:absolute; font-family:"FontAwesome"; font-size:10px; line-height:10px;}
 
@@ -376,6 +390,7 @@ label span{color:#FF0000; background-color:inherit;}
 
 /* Content Area */
 .services li article{border-color:transparent;}
+.services li:hover{ transform: scale(1.1);box-shadow: 0 0 10px #484848;}
 .services li:hover article{border-color:#ff6d02;box-shadow: 0 0 10px #efefef;}
 .services li:hover { background: #ff6d02;color: #fff;}
 .services li:hover .bigLink {color:#484848;}
@@ -388,7 +403,7 @@ label span{color:#FF0000; background-color:inherit;}
 
 /* Full Width Split Box */
 #split50{color:#FFFFFF; background-color:#083545;}
-#split50 .block{background-color:inherit;} /* Changes in the media queries */
+#split50 .block{background-color:rgba(8,53,69,0.75);} /* Changes in the media queries */
 
 
 /* Newsletter */
@@ -404,7 +419,7 @@ label span{color:#FF0000; background-color:inherit;}
 #mainav li{border-right-color:#EFEFEF;}
 #mainav li a{color:inherit;}
 #mainav .active a, #mainav a:hover, #mainav li:hover > a{color:#ff6d02; background-color:inherit;}
-#mainav li li a, #mainav .active li a{color:#FFFFFF; background-color:rgba(0,0,0,.6); border-color:rgba(0,0,0,.6);}
+#mainav li li a, #mainav .active li a{color:#FFFFFF; background-color:rgba(8,53,69,0.75); border-color:rgba(0,0,0,.6);}
 #mainav li li:hover > a, #mainav .active .active > a{color:#FFFFFF; background-color:#ff6d02;}
 #mainav form select{color:#888888; background-color:#FFFFFF; border-color:#EFEFEF;}
 
@@ -450,11 +465,12 @@ table a, #comments a{background-color:inherit;}
 	#topbar li{float:none; border:none;}
 
 	.container{padding-bottom:50px;}
+    .services li:hover{transform: none;}
 }
 
 @media screen and (min-width:180px) and (max-width:900px) {
 	#header, #topbar, #breadcrumb, .container, #newsletter, #footer, #copyright{max-width:95%;}
-
+    .services li:hover{transform: none;}
 	#header{}
 
 	#topbar{}
