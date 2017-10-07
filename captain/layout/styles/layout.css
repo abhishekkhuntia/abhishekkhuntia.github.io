@@ -17,6 +17,12 @@
 -----------------------------------------
 */
 .fl_right{float: right !important;}
+.services-grid-view{ display: inline-block;width: 100%; overflow: auto; padding: 0px;}
+.services-grid-view li a{padding:40px;text-align: center;display: block; }
+.services-grid-view li{float: left; list-style: none; padding: 0px; border: 3px solid #ddd; margin: 5px; width: 21%;}
+.services-grid-view li h4{text-transform: uppercase;font-size: 0.8em;}
+.services-grid-view li:hover{background-color:#083545; color: #fff; background-image: url('../../images/real/cubes.png');}
+.services-grid-view li:hover a{color:#fff;}
 .country_list{ padding: 0px;}
 .country_list li{
     display: inline-block;
@@ -27,7 +33,7 @@
     margin: 10px;
     font-weight: bold;
     border-left: 5px solid #f90;}
-.country_list li:nth-child(even){border-color: #66ccff;}
+.country_list li:nth-child(even){border-color: #083545;}
 .locDiv{background-position:center !important; background-size: cover !important;transition:all .3s ease-in-out;}
 .locDiv:hover{}
 .red-arrow{
@@ -466,6 +472,7 @@ table a, #comments a{background-color:inherit;}
 
 	.container{padding-bottom:50px;}
     .services li:hover{transform: none;}
+    .services-grid-view li{display: table; width:100%;}
 }
 
 @media screen and (min-width:180px) and (max-width:900px) {
