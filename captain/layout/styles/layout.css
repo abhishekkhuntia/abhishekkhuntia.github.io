@@ -178,7 +178,7 @@ nav ul, nav ol{margin:0; padding:0; list-style:none;}
 #mainav .drop::after, #mainav li li .drop::after, #breadcrumb li a::after, .sidebar nav a::after{position:absolute; font-family:"FontAwesome"; font-size:10px; line-height:10px;}
 
 /* Top Navigation */
-#mainav{margin:8px 0 0 0;}
+#mainav{margin:8px 0 0 0;padding: 15px;}
 #mainav ul{text-transform:uppercase;}
 #mainav ul ul{z-index:9999; position:absolute; width:160px; text-transform:none;}
 #mainav ul ul ul{left:160px; top:0;}
@@ -283,7 +283,7 @@ label span{color:#FF0000; background-color:inherit;}
 .blue{color:#FFFFFF; background-color:#ff6d02;}
 
 /* Rows */
-.row0, .row0 a{color:#888888; background-color:#FFFFFF;}
+.row0, .row0 a{color:#888888; background-color:transparent;}
 .row0{border-color:#ff6d02;}
 .row1, .row1 a{color:#888888; background-color:#F5F5F5; border-color:#EFEFEF;}
 .row2, .row2 a{color:#FFFFFF; background-color:#083545; border-color:#EFEFEF;}
@@ -344,6 +344,7 @@ label span{color:#FF0000; background-color:inherit;}
   outline: 1px solid transparent;
   animation: smallBoxAnim 1.25s alternate infinite ease-in-out;
 }
+#logo a { background: transparent;}
 
 @keyframes smallBoxAnim {
   0% {
@@ -375,7 +376,9 @@ label span{color:#FF0000; background-color:inherit;}
 
 /* Content Area */
 .services li article{border-color:transparent;}
-.services li:hover article{border-color:#EFEFEF;box-shadow: 0 0 10px #efefef;}
+.services li:hover article{border-color:#ff6d02;box-shadow: 0 0 10px #efefef;}
+.services li:hover { background: #ff6d02;color: #fff;}
+.services li:hover .bigLink {color:#484848;}
 .services .one_quarter{ background: #fff; border: 1px solid #ddd; transition: 0.3s;}
 
 
@@ -395,7 +398,7 @@ label span{color:#FF0000; background-color:inherit;}
 
 /* Footer */
 #footer .title{border-color:#000000;}
-
+.pureWhite{ background: #fff;}
 
 /* Navigation */
 #mainav li{border-right-color:#EFEFEF;}
@@ -457,6 +460,7 @@ table a, #comments a{background-color:inherit;}
 	#topbar{}
 
 	#mainav{}
+    
 	#mainav ul{display:none;}
 	#mainav form{display:block;}
 
