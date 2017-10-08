@@ -16,6 +16,42 @@
 /* Bellow all 
 -----------------------------------------
 */
+.moreInfo{
+    box-sizing: border-box;
+    width: 545px;
+    position: fixed;
+    right: 0px;
+    top: 0;
+    bottom: 0;
+    background-color: #083545;
+    height: 100%;
+    border-radius: 0px;
+    z-index: 10000000;
+    color: #fff;
+}
+.modalContent{
+    
+}
+#slide_modal::before{
+    width: 70px; */
+    height: 0px;
+    border-top: 326px solid transparent;
+    border-bottom: 347px solid transparent;
+    position: absolute;
+    content: '';
+    border-left: 254px solid #6A8520;
+    z-index: -1;
+    bottom: 0px;
+    background-image: url('../../images/real/cubes.png');
+}
+#modalP{ margin-top:15px; margin-bottom: 25px;line-height: 1.5em;}
+.iconH2{ border: 5px solid #fff; width: fit-content; padding: 10px;box-shadow: 9px 11px 10px #000;}
+.modalShade,.moreInfo{display: none;}
+#extraLink{ text-decoration: none;margin-top:10px;}
+#extraLink button{ padding: 10px 20px; background: #f90; color: #000; box-shadow: 7px 7px 10px #000; border: none; border-radius: 5px;  cursor: pointer;text-transform: uppercase;}
+#headerId{text-transform: uppercase; border-bottom: 1px dashed #f90;}
+.inHeader{padding:30px 25px 1px 25px;}
+.modalShade{width: 100%; position: fixed; z-index: 100000; background: rgba(72,72,72,0.8);top: 0px;left: 0px;height: 100vh;}
 .fl_right{float: right !important;}
 .services-grid-view{ display: inline-block;width: 100%; overflow: auto; padding: 0px;}
 .services-grid-view li a{padding:40px;text-align: center;display: block; }
@@ -503,6 +539,7 @@ table a, #comments a{background-color:inherit;}
 
 	#copyright{}
 	#copyright p:first-of-type{margin-bottom:10px;}
+    .moreInfo{width: 100%;}
 }
 
 

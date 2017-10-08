@@ -158,49 +158,51 @@
     </div>
     <ul class="services-grid-view">
         <li class="s_grid">
-            <a href="#" title="Details">
+            <a class="onClickModalA" href="#" title="Household good Movements" modal-data="Moving your belongings from place to place may get tiring and worry some. Captain takes great care in moving your household goods and we ensure that the goods reach the destination point safely by clearing all taxes and complying with government regulations.">
             <i class="fa fa-3x fa-truck btmspace-30"></i>
             <h4>Household good movements</h4>
             </a>
         </li>
         <li class="s_grid">
-            <a href="#" title="Details">
+            <a class="onClickModalA" href="#" title="Immigration" modal-data="New visa & corrections, exit permits, return visa, Change of Passport, Port, Travel Mode, Loss of Passport and other related services are covered under the FRRO package provided by Captain.">
             <i class="fa fa-3x fa-globe btmspace-30"></i>
             <h4>Immigration<br/>services</h4>
             </a>
         </li>
         <li class="s_grid">
-            <a href="#" title="Details">
+            <a  class="onClickModalA" href="#" title="Car Rental" modal-data="With our Car Rental Services, you can have any car that suits your requirement for a short duration. With Captain's services, we know that every employer takes care of its people.">
             <i class="fa fa-3x fa-car btmspace-30"></i>
             <h4>Car<br/>Rental</h4>
             </a>
         </li>
         <li class="s_grid">
-            <a href="#" title="Details">
+            <a class="onClickModalA" href="#" title="Temporary Housing" modal-data="We exceptional temporary housing experience by tying up with fully furnished serviced apartments and hotels. To provide a comfortable stay and an experience that you will cherish.">
             <i class="fa fa-3x fa-building btmspace-30"></i>
             <h4>Temporary<br/>Housing</h4>
             </a>
         </li>
         <li class="s_grid">
-            <a href="#" title="Details">
+            <a class="onClickModalA" href="#" title="School Search" modal-data="We understand that your child deserves the best and we help you choose only the best.  We identify your needs and prioritize your requirements by mapping the schools based on the quality of teaching.">
             <i class="fa fa-3x fa-graduation-cap btmspace-30"></i>
             <h4>School<br/>Search</h4>
             </a>
         </li>
         <li class="s_grid">
-            <a href="#" title="Details">
+            <a class="onClickModalA" href="#" title="Cultural Training" modal-data="We will personally induct you to the Indian lifestyle and make you feel comfortable. Be it an introduction to Indian cuisine or to learn formal ways to greet or even have fun in the Indian context">
             <i class="fa fa-3x fa-music btmspace-30"></i>
             <h4>Cultural<br/>training</h4>
             </a>
         </li>
         <li class="s_grid">
-            <a href="#" title="Details">
+            <a class="onClickModalA" href="#" title="FURNITURE RENTALS" modal-data="Captain provides tailor-made customised packages in terms of furniture rental. Now you can rent couches, furniture, bed sets and more. Give a new look to your home with great deals and aesthetically pleasing furniture.">
             <i class="fa fa-3x fa-bed btmspace-30"></i>
             <h4>FURNITURE<br/>RENTALS</h4>
             </a>
         </li>
         <li class="s_grid">
-            <a href="#" title="Details">
+            <a class="onClickModalA" href="#" title="settling in services" modal-data="We are always with you and guide you with utmost dedication by showing you around so that you get accustomed to the local community. We simplify the entire process for you and we save your time so that you spend quality time elsewhere. 
+Captain takes care of its clients and we ensure that the life of your employees is hassle-free.
+">
             <i class="fa fa-3x fa-home btmspace-30"></i>
             <h4>settling in services</h4>
             </a>
@@ -432,6 +434,16 @@
         </div>
     </div>
 </div>
+<div class="modalShade">
+</div>
+<div id="slide_modal" class="moreInfo">    
+    <div class="inHeader">
+        <h4><span id="headerId">Information</span><i id="modalCross" align="end" class="fa fa-times btmspace-30 fl_right"></i></h4>
+        <h2 class="iconH2"><i id="iconId"></i></h2>
+        <p id="modalP" class="modalContent"></p>
+        <a id="extraLink" href="#"><button class="know_btn">Know More</button></a>
+    </div>
+</div>
 <script type="text/javascript">
     function loopSlider()
     {
@@ -444,7 +456,26 @@
         console.log("Loader is faded out");
         loopSlider();
     });
-    
+    $(document).ready(function(){
+        $("#modalCross").click(function(){
+           $(".modalShade").fadeOut();
+           $("#slide_modal").toggle(500);
+        });
+        $(".services-grid-view").on('click','.onClickModalA', function(e){
+           e.preventDefault();
+           
+           $(".modalShade").fadeIn();
+           $("#slide_modal").toggle(500);
+           
+           var pageData ={title: $(this).attr('title'),
+                         page_content: $(this).attr('modal-data'),
+                         "icon-pack": $(this).children('.fa').attr('class')};
+           $("#headerId").text(pageData.title);
+           $("#modalP").text(pageData.page_content);
+           $("#iconId").attr({'class':pageData["icon-pack"]});
+           $("#iconId").removeClass("btmspace-30");
+        });
+    });
 </script>
 </body>
 </html>
