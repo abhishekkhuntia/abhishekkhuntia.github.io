@@ -32,8 +32,12 @@
 .modalContent{
     
 }
+.leadership_list li { justify-content: center;text-align:center;display: inline-flex; margin: 10px;width: 200px; padding: 20px;box-shadow: 5px 7px 0px #994101;background: #ff6d02;color: #fff;}
+.leadership_list li h4{ font-size:0.9em;}
+.leadership_list li .proImg{width: 70%; height: auto; border-radius: 50%;background: #ddd; padding: 10px; margin: 10px;}
+.leadership_list .name{ padding: 10px; background: #083545; color:#fff;}
 #slide_modal::before{
-    width: 70px; */
+    width: 70px;
     height: 0px;
     border-top: 326px solid transparent;
     border-bottom: 347px solid transparent;
@@ -44,6 +48,22 @@
     bottom: 0px;
     background-image: url('../../images/real/cubes.png');
 }
+.staticBackground{
+     height: 300px; background-position: center;background-size: cover;
+}
+    .staticBackground h1{font-size: 4.5em;}
+.aboutDiv h3{
+    background: #ddd;
+    padding: 10px;
+}
+.aboutDiv h3:nth-child(even){
+    background: #083545 !important;
+    color: #fff;
+}
+.no-pointer{ cursor: default;}
+.attention:hover{background: red !important;}
+.attention{background: red;color: #fff !important; border-color: red !important;}
+.primary_color{background: #083545!important; color: #fff;border-color: #083545 !important;}
 #modalP{ margin-top:15px; margin-bottom: 25px;line-height: 1.5em;}
 .iconH2{ border: 5px solid #fff; width: fit-content; padding: 10px;box-shadow: 9px 11px 10px #000;}
 .modalShade,.moreInfo{display: none;}
