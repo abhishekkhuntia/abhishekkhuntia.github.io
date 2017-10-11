@@ -73,9 +73,15 @@
 .inHeader{padding:30px 25px 1px 25px;}
 .modalShade{width: 100%; position: fixed; z-index: 100000; background: rgba(72,72,72,0.8);top: 0px;left: 0px;height: 100vh;}
 .fl_right{float: right !important;}
-.services-grid-view{ display: inline-block;width: 100%; overflow: auto; padding: 0px;}
+.services-grid-view{width: 100%;
+    overflow: auto;
+    padding: 0px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);}
 .services-grid-view li a{padding:40px;text-align: center;display: block; }
-.services-grid-view li{float: left; list-style: none; padding: 0px; border: 3px solid #ddd; margin: 5px; width: 21%;}
+.services-grid-view li{ list-style: none; padding: 0px; border: 3px solid #ddd; margin: 5px;}
 .services-grid-view li h4{text-transform: uppercase;font-size: 0.8em;}
 .services-grid-view li:hover{background-color:#083545; color: #fff; background-image: url('../../images/real/cubes.png');}
 .services-grid-view li:hover a{color:#fff;}
@@ -528,7 +534,7 @@ table a, #comments a{background-color:inherit;}
 
 	.container{padding-bottom:50px;}
     .services li:hover{transform: none;}
-    .services-grid-view li{display: table; width:100%;}
+    .services-grid-view{grid-template-columns: repeat(1, 1fr);}
 }
 
 @media screen and (min-width:180px) and (max-width:900px) {
