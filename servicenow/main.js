@@ -41,7 +41,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- NO ROUTER HAS BEEN ADDED SINCE ITS NOT GOING TO NAVIGATE FROM THE PAGE -->\n<div>\n  <header class=\"header fixed\">\n    <h1>ServiceNow || Abhishek Khuntia</h1>\n    <input type=\"text\" placeholder=\"Search by name!\" [(ngModel)]=\"filterBy\" (input)=\"checkNReset($event)\" />\n  </header>\n  <div class=\"container\">\n      <div class=\"content\">\n          <list-component [listData]=\"usersData\"  [filterBy]=\"filterBy\"></list-component>\n      </div>\n  </div>\n    \n</div>\n<div *ngIf=\"showLoader\" class=\"modal-shade\">\n    <img src=\"assets/loader.gif\" alt=\"\">\n</div>"
+module.exports = "<!-- NO ROUTER HAS BEEN ADDED SINCE ITS NOT GOING TO NAVIGATE FROM THE PAGE -->\n<div>\n  <header class=\"header fixed\">\n    <div class=\"clearfix\">\n        <h1>The Interview - Abhishek Khuntia</h1>\n        <input type=\"text\" placeholder=\"Search by name!\" [(ngModel)]=\"filterBy\" (input)=\"checkNReset($event)\" />\n    </div>\n  </header>\n  <div class=\"container\">\n      <div class=\"content\">\n          <list-component [listData]=\"usersData\"  [filterBy]=\"filterBy\"></list-component>\n      </div>\n  </div>\n    \n</div>\n<div *ngIf=\"showLoader\" class=\"modal-shade\">\n    <img src=\"assets/loader.gif\" alt=\"\">\n</div>"
 
 /***/ }),
 
@@ -221,7 +221,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".list-ul{\n    padding: 20px 10px;\n}\n.list-ul li{\n    list-style: none;\n    padding: 10px;\n    border-bottom: 1px solid #484848;\n}\n.list-ul li img{\n    height: 75px;\n    width: 75px;\n    border: 5px solid #428C67;\n}\n.list-ul li h2{\n    margin: 0px;\n}\n.droppable{\n    border: 1px solid dashed #484848;\n    background: #428C67;\n    color: #fff;\n}"
+module.exports = ".list-ul{\n    padding: 20px 10px;\n}\n.list-ul li{\n    list-style: none;\n    padding: 10px;\n    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);\n    display: block;\n    margin-bottom: 15px;\n    border-radius: 5px;\n    transition: .3s all;\n    background: white;\n}\n.list-ul li:hover{ \n    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);\n}\n.list-ul li div {\n    float: left;\n}\n.list-ul li div.emp-info {\n    margin: 10px;\n}\n.list-ul li img{\n    height: 85px;\n    width: 85px;\n    border: 5px solid #ececeb;\n    line-height: 0;\n    display: block;\n    border-radius: 50%;\n}\n.list-ul li h2{\n    margin: 0px;\n}\n.droppable{\n    border: 1px solid dashed #484848;\n    background: #428C67;\n    color: #fff;\n}\n.clearfix::after {\n    display: block;\n    content: \"\";\n    clear: both;\n}"
 
 /***/ }),
 
@@ -232,7 +232,7 @@ module.exports = ".list-ul{\n    padding: 20px 10px;\n}\n.list-ul li{\n    list-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <ul class=\"list-ul\" #draggable>\n    <li draggable=\"true\" (dragend)=\"dragend($event)\"  (drag)=\"dragStart($event, index)\" (dragover)=\"dropped($event, index)\" class=\"profile-list\" *ngFor=\"let item of listData | searchByName: filterBy; let index = index;\">\n      <div>\n          <img [src]=\"item.avatar\" [alt]=\"item.name\"/>\n      </div>\n      <div> \n        <h2>{{item.name}}</h2>\n        <h2>{{item.Company}}</h2>\n      </div>\n    </li>\n  </ul>\n</div>"
+module.exports = "<div>\n  <ul class=\"list-ul\" #draggable>\n    <li draggable=\"true\" (dragend)=\"dragend($event)\"  (drag)=\"dragStart($event, index)\" (dragover)=\"dropped($event, index)\" class=\"profile-list clearfix\" *ngFor=\"let item of listData | searchByName: filterBy; let index = index;\">\n      <div>\n          <img [src]=\"item.avatar\" [alt]=\"item.name\"/>\n      </div>\n      <div class=\"emp-info\"> \n        <h2>{{item.name}}</h2>\n        <h2>{{item.Company}}</h2>\n      </div>\n    </li>\n  </ul>\n</div>"
 
 /***/ }),
 
