@@ -41,7 +41,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- NO ROUTER HAS BEEN ADDED SINCE ITS NOT GOING TO NAVIGATE FROM THE PAGE -->\n<div>\n  <header class=\"header fixed\">\n    <div class=\"clearfix\">\n        <h1>The Interview - Abhishek Khuntia</h1>\n        <input type=\"text\" placeholder=\"Search by name!\" [(ngModel)]=\"filterBy\" (input)=\"checkNReset($event)\" />\n    </div>\n  </header>\n  <div class=\"container\">\n      <div class=\"content\">\n          <list-component [listData]=\"usersData\"  [filterBy]=\"filterBy\"></list-component>\n      </div>\n  </div>\n    \n</div>\n<div *ngIf=\"showLoader\" class=\"modal-shade\">\n    <img src=\"assets/loader.gif\" alt=\"\">\n</div>"
+module.exports = "<!-- NO ROUTER HAS BEEN ADDED SINCE ITS NOT GOING TO NAVIGATE FROM THE PAGE -->\n<div>\n  <header class=\"header fixed\">\n    <div class=\"clearfix\">\n        <h1>The Interview - Abhishek Khuntia</h1>\n        <input type=\"text\" [disabled]=\"showLoader\" placeholder=\"Search by name!\" [(ngModel)]=\"filterBy\" (input)=\"checkNReset($event)\" />\n    </div>\n  </header>\n  <div class=\"container\">\n      <div class=\"content\">\n          <list-component [listData]=\"usersData\"  [filterBy]=\"filterBy\"></list-component>\n      </div>\n  </div>\n    \n</div>\n<div *ngIf=\"showLoader\" class=\"modal-shade\">\n    <img src=\"assets/loader.gif\" alt=\"\">\n</div>"
 
 /***/ }),
 
