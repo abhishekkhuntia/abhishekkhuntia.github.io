@@ -94,10 +94,8 @@ var AppComponent = /** @class */ (function () {
         this.onResize();
     };
     AppComponent.prototype.checkNReset = function () {
-        if (!this.filterBy.length) {
-            this.currentPage = 0;
-            this.usersData = [];
-        }
+        this.usersData = [];
+        this.currentPage = 0;
         this.stopLoading = false;
         this.fetchDefaultUserList();
     };
