@@ -387,7 +387,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var TodoMottoService = /** @class */ (function () {
     function TodoMottoService(http) {
         this.http = http;
-        this.baseUrl = 'http://5bbf4f0572de1d001325376f.mockapi.io/api/fake-data/';
+        this.baseUrl = 'https://5bbf4f0572de1d001325376f.mockapi.io/api/fake-data/';
     }
     TodoMottoService.prototype.getUserDataByParams = function (paramsData) {
         var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpParams"]();
