@@ -221,7 +221,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".list-ul{\n    padding: 20px 10px;\n}\n.list-ul li{\n    list-style: none;\n    padding: 10px;\n}\n.list-ul li img{\n    height: 100px;\n    width: 100px;\n    border: 5px solid #428C67;\n}\n.droppable{\n    border: 1px solid dashed #484848;\n    background: #428C67;\n    color: #fff;\n}"
+module.exports = ".list-ul{\n    padding: 20px 10px;\n}\n.list-ul li{\n    list-style: none;\n    padding: 10px;\n    border-bottom: 1px solid #484848;\n}\n.list-ul li img{\n    height: 75px;\n    width: 75px;\n    border: 5px solid #428C67;\n}\n.list-ul li h2{\n    margin: 0px;\n}\n.droppable{\n    border: 1px solid dashed #484848;\n    background: #428C67;\n    color: #fff;\n}"
 
 /***/ }),
 
