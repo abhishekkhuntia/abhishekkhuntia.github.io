@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <link rel="stylesheet" href="./human-stick.css" media="screen" type="text/css">
+    <!-- <script src="main.js"></script> -->
+    <script src="state-manager-min.js"></script>
+    <style>
+        body{
+            margin: 0px;
+            font: 300 16px/1.167 'Segoe UI Light','Segoe UI',Helvetica,Garuda,Arial,sans-serif;
+        }
+        body header{
+            
+        }
+        h1,h2,h3,h4,h5,h6,p{
+            margin: 0px;
+            padding: 0px;
+            font-weight: 300;
+        }
+        .full-page{
+            height: 100vh;
+            width: 100%;
+            color: #fff;
+            overflow: hidden;
+        }
+        #aboutme{
+            background: #146e87;
+            background-image: url('./img/stars.png');
+        }
+        #aboutme .human-wrapper{
+            float: left;
+            width: 50%;
+            padding-top: 25vh;
+        }
+        .human-wrapper div:first-child{
+            position: relative;
+        }
+        #aboutme .content{
+            width: 50%;
+            float: right;
+            padding-top: 25vh;
+            text-shadow: 0 3px 5px #484848;
+        }
+        #aboutme::after{
+            clear: both;
+        }
+        .space-gray{
+            background: radial-gradient( circle,  rgba(34,34,34,1) 8.3%, rgba(0,40,60,1) 41.6%, #4b4b4c 93.4% );
+        }
+        .morning-gradient{
+            background:  radial-gradient( circle, #f90, #e33873);
+        }
+        .vert-middle{
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 25vh;
+        }
+        .vert-middle .text-box{
+            
+        }
+        .initial-msg{
+            animation-name: scale-init;
+            animation-duration: 1.3s; 
+            animation-timing-function: ease-in-out; 
+            animation-delay: 0.3s;
+            animation-direction: alternate;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            animation-play-state: running; 
+            font-size: 50px;
+            text-transform: capitalize;
+            color: transparent;
+        }
+        @keyframes scale-init{
+            0%{
+                color: transparent;
+                opacity: 0;
+            }
+            100%{
+                color: #fff;
+                opacity: 1;
+            }
+            
+        }
+        .trigger-btn{
+            border: none;
+            height: 0px;
+            width: 0px;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-left: 15px solid #484848;
+            transform: rotate(-90deg);
+            background: transparent;
+            transition: 0.5s;
+        }
+        .trigger-btn.revert{
+            transform: rotate(90deg);
+        }
+        .afternoon-nap{
+            background:  radial-gradient( circle, #f90 28%, #66ccff);
+        }
+        .morning-star{
+            background:  radial-gradient( circle, #f90, #e33873);
+        }
+        .evening-snack{
+            background:  radial-gradient( circle at bottom, #db781a 10%, #FA5, #146e87 50%);
+        }
+        .dawn-of-justice{
+            background: radial-gradient( circle at top,  #ddd 10.3%, rgba(0,40,60,1) 13.6%, #000);
+        }
+        .dawn-of-justice .trigger-btn{
+            border-left-color: #fff;
+        }
+        .morning-star .trigger-btn{
+            border-left-color: #e33873;
+        }
+        .evening-snack .trigger-btn{
+            border-left-color: #146e87;
+        }
+         .bottom-panel{
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            text-align: center;
+        }
+        .block-nav{
+            list-style: none;
+        }
+        .block-nav li{
+            position: relative;
+            transform: skew(15deg);
+            margin: -22px;
+            transition: 0.5s;
+            border: 2px solid #fff;
+            background: #0F2027;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, rgba(44,83,100, 1), rgba(32, 58, 67, 0.8), rgba(15,32,39, 0.7));
+            background: linear-gradient(to right, rgba(44,83,100, 1), rgba(32, 58, 67, 0.8), rgba(15,32,39, 0.7))
+        }
+        .block-nav li a{
+            padding: 20px 30px;
+            display: block;
+            color: inherit;
+            text-decoration: inherit;
+        }
+        .block-nav li:hover{
+            margin: 15px 0px;
+            transform: skew(0deg);
+            color: #fff;
+            box-shadow: 0 0 10px #000;
+            z-index: 4;
+            background: -webkit-linear-gradient(to right,  rgba(44,83,100, 1), rgba(32, 58, 67, 1), #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, rgba(44,83,100, 1), rgba(32, 58, 67, 1), #0F2027)
+        }
+        .bottom-panel-div{
+            display: none;
+            width: 50%;
+            left: 25%;
+            margin:50px auto;
+        }
+        .show-div-animate{
+            animation-name: scale-init;
+            display: block;
+            animation-duration: 0.7s; 
+            animation-timing-function: ease-in-out; 
+            animation-direction: alternate;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            animation-play-state: running; 
+            text-transform: capitalize;
+            color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="page1" class="full-page">
+            <div class="vert-middle">
+                <div class="content">
+                        <h1 class="initial-msg">Hi<span class="text-box">!</span></h1>
+                        <h2 id="welcom-msg" class="initial-msg"></h2>
+                </div>                
+            </div>
+            <div class="bottom-panel">
+                <button class="trigger-btn up-arrow" id="trigger-btn" title="Click to Open" aria-label="Click to open panel"></button>
+            </div>
+            <div class="bottom-panel-div">
+                    <ul class="block-nav">
+                        <li><a href="#aboutme" a-scroll="#aboutme" aria-label="Click to About me">About Me</a></li>
+                        <li><a href="#projects" a-scroll="#projects" aria-label="Click to Projects">Projects</a></li>
+                        <li><a href="#skill" a-scroll="#skills" aria-label="Click to Skills">Skills</a></li>
+                        <li><a href="#contact" a-scroll="#contact" aria-label="Click to Contact information">Contact info</a></li>
+                    </ul>
+            </div> 
+        </div>
+        <div id="aboutme" class="full-page">
+            <div class="stick-fig">
+                <div class="human-wrapper">
+                    <div>
+                        <div class="head"></div>
+                        <div class="torso"></div>
+                        <div class="leftarm"></div>
+                        <div class="rightarm"></div>
+                        <div class="leftleg"></div>
+                        <div class="leftfoot"></div>
+                        <div class="rightleg"></div>
+                        <div class="rightfoot"></div>
+                    </div>
+                </div>                            
+            </div>
+            <div class="content">
+                <h2>I'm Abhishek,</h2>
+                <h3>Aged at <span a-time-compare="746606116000"></span> and ticking.<br/>Application Developer by profession with experience of <span a-time-compare="1440992116000"></span>.</h3>
+            </div>
+        </div>
+    </header>
+    <script>
+            function updateCelest(timeState){
+                var hour = new Date().getHours();
+                if(hour >= 0 && hour < 6){
+                    // DAWN
+                    timeState.next('DAWN');
+                } else if(hour >=6 && hour < 12){
+                    // MORNING
+                    timeState.next('MORNING');
+                } else if(hour >= 12 && hour < 17){
+                    // afternoon
+                    timeState.next('AFTERNOON');
+                } else if(hour >=17){
+                    // evening
+                    timeState.next('EVENING');
+                }
+            }
+            function updateViewContent(oldState, newState){
+                var msgEle = document.getElementById('welcom-msg'),
+                    classesToRemove = {DAWN: 'dawn-of-justice',MORNING: 'morning-star', AFTERNOON: 'afternoon-nap', EVENING: 'evening-snack'};
+                    body = document.getElementById('page1');
+                    Object.values(classesToRemove).forEach(cls => {
+                        body.classList.remove(cls);
+                    });
+                    body.classList.add(classesToRemove[newState]);
+                    msgEle.innerHTML = 'Good ' + newState.toLowerCase();
+            }
+            function toggleBottomPanel($event){
+                var panel = document.querySelector('.bottom-panel-div'),
+                    vertContent = document.querySelector('.vert-middle .content');
+                if(panel){
+                    var styles = window.getComputedStyle(panel);
+                    if(styles.display != 'block'){
+                        panel.classList.add('show-div-animate');
+                        $event.target.classList.add('revert');
+                        $event.target.setAttribute('title', 'Click to Close');
+                    } else{
+                        panel.classList.remove('show-div-animate');
+                        $event.target.classList.remove('revert');
+                        $event.target.setAttribute('title', 'Click to Open');
+                    }
+                }
+            }
+            function handleWheelScroll(event){
+                var delta;
+                if (event.wheelDelta){
+                    delta = event.wheelDelta;
+                }else{
+                    delta = -1 * event.deltaY;
+                }
+                if (delta < 0){
+                    showBottomPanel(event);
+                }
+            }
+            function smoothScrollInitialise(){
+                var smoothScroll = document.querySelectorAll('[a-scroll]');
+                if(smoothScroll && smoothScroll.length){
+                    for(var i=0; i< smoothScroll.length; i++){
+                        var _el = smoothScroll[i];
+                        _el.addEventListener('click', function(e){
+                            var sel = e.target.getAttribute('a-scroll');
+                            if(sel && (elem = document.querySelector(sel))){
+                                if(elem){
+                                    e.preventDefault();
+                                    window.scrollTo({
+                                        top: elem.offsetTop,
+                                        behavior: 'smooth'
+                                    });
+                                    elem.focus(); // for accessibility
+                                }
+                            }
+                        });
+                    }
+                }
+            }
+            function intiateTimely(attr){
+                var elems = document.querySelectorAll(attr);
+                if(elems && elems.length){
+                    elems = Array.prototype.slice.call(elems);
+                    elems.forEach(ele => {
+                        var prevT = ele.getAttribute('a-time-compare'),
+                            prevT = Number(prevT),
+                            _d = new Date(prevT),
+                            nd = new Date();
+                            if(_d.constructor == Date && !isNaN(_d.getTime())){
+                                var dateObj = {
+                                    year: (nd.getYear() - _d.getYear()),
+                                    month: (nd.getMonth() - _d.getMonth())
+                                };
+                                if(dateObj.month < 0){
+                                    dateObj.month = dateObj.month + 12;
+                                    dateObj.year = ((dateObj.year-1) < 0) ? 0: (dateObj.year -1)
+                                } 
+                                var dateString = '';
+                                for(var i in dateObj){
+                                    if(dateObj[i] > 0){
+                                        dateString += `${dateObj[i]} ${i}s`;
+                                    }
+                                }
+                                ele.innerHTML = dateString;
+                            }                          
+                        });
+                }
+            }
+            window.onload = function(){
+                var stateChangeRequired = true;
+                var timeState = new StateManager();
+                var m = timeState.subscribe(updateViewContent),
+                    triggerBtn = document.getElementById('trigger-btn');
+                var page1 = document.getElementById('page1');
+                if(page1){
+                    // page1.addEventListener('wheel', handleWheelScroll);
+                }
+                if(triggerBtn){
+                    triggerBtn.addEventListener('click', toggleBottomPanel);
+                }
+                updateCelest(timeState);
+                var _int = setInterval(()=> updateCelest(timeState), 6000);
+                // adding smooth scroll
+                smoothScrollInitialise();
+                intiateTimely('[a-time-compare]');
+            };
+    </script>
+</body>
+
+</html>
